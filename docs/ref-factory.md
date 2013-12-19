@@ -72,10 +72,10 @@ public class MyAppModule {
 In this case the methods annotated with `@Provides` are used to build components of their returned types. You can annotate them with `@Named` to indicate the name of the component produced.
 The provider methods can take arbitrary parameters, which are satisfied the same way as constructor parameters are injected (so you can use @Named to indicate their names).
 
-### Optional Components
+### Optional Dependencies
 
 If a `@Named` component is of type `Optional`, it will be considered an `Optional<T>` dependency of type T.
-In this case, if the component is not found, Dependency Injection will not break with an exception, and Optional.absent() will be injected.
+In this case, if the component is not found, Dependency Injection will not break with an exception, and `Optional.absent()` will be injected.
 
 It can be useful in particular cases, to handle loaded dependencies at runtime.
 
@@ -117,6 +117,18 @@ public class MyComponent {
 }
 {% endhighlight %}
 
+### Deactivating a component
+
+If a component is supposed to be available (eg because you load machines from the serviceloader and it is defined there) and you don't want to actually have it (eg because it's a filter that you don't want to use in your app for performance or security reasons), you can deactivate the component by setting a String component (eg with `System.setProperty`) on the activation key with the value `false`.
+
+The activation key has the following form:
+`restx.activation::<component.fully.qualified.name>::<component.name>`
+
+Note that by default (when not specified with `@Named` the component name is the the type simple name if declared as a `@Component`, or the provides method name if declared with `@Provides`.
+
+So if for instance you want to deactivate RESTX Cookies based session management, you can simply call:
+`System.setProperty("restx.activation::restx.security.RestxSessionCookieFilter::RestxSessionCookieFilter", "false")`
+
 
 ### Getting a Factory
 
@@ -126,9 +138,37 @@ Factory factory = Factory.builder()
                 .addFromServiceLoader().build();
 {% endhighlight %}
 
+or even simpler:
+{% highlight java %}
+Factory factory = Factory.getInstance();
+{% endhighlight %}
+
+
 This factory will load the machines declared in the `META-INF/services/restx.factory.FactoryMachine` files, using the standard ServiceLoader mechanism. But don't worry, you don't have to write these files manually, restx factory annotation processing can do it for you!
 
+<div class="note">
+	<p>Most of the time you won't need to create a Factory yourself. If you want to have access to the Factory in a component, declare it as a parameter in your injectable constructor and current factory will be injected into your component. But even that shold be used with care, because in this case the Factory won't have proper dependency tracking of your component.</p>
+</div>
+
+
+
 ### Getting a component from the factory
+
+Getting one component by type (raises an exception if not available or several components available):
+{% highlight java %}
+MyComponent component = factory.getComponent(MyComponent.class);
+{% endhighlight %}
+
+Getting the list of components of a particular type:
+{% highlight java %}
+Iterable<MyComponent> component = factory.getComponents(MyComponent.class);
+{% endhighlight %}
+
+Getting one component by name (raises an exception if not available):
+{% highlight java %}
+MyComponent component = factory.getComponent(Name.of(MyComponent.class, "myname"));
+{% endhighlight %}
+
 
 Getting one component by type (note the use of `Optional` from guava, to indicate it may not find anything):
 {% highlight java %}
@@ -375,10 +415,15 @@ You can easily declare components which are made available to the factory only u
 
 You can define a factory machine which in turns builds other factory machines. This is the mechanism used under the hood to provide the alternatives support.
 
-### support for Optional
+#### Support for Optional
 
 By default all dependencies are mandatory, but you can use an `Optional<MyType>` to express an optional dependency
 
-### Multi injection
+#### Multi injection
 
 The factory is able to inject all the components implementing a class or interface.
+
+#### Easy component deactivation
+
+Any component can easily be deactivated, ie marked as if it was not defined at all in the Factory.
+
