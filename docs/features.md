@@ -7,7 +7,7 @@ filename: features.md
 
 ## focused on REST
 
-   Building a RESTful API is dead easy with RESTX, it has all the defaults you can expect from a REST framework: serving / consuming JSON is super easy, query and path parameters are almost too simple to use, you get a strong routing and filtering mechnism and no conversation state is kept on the web server (aka stateless web server). 
+   Building a RESTful API is dead easy with RESTX, it has all the defaults you can expect from a REST framework: serving / consuming JSON is super easy, query and path parameters are almost too simple to use, you get a strong routing and filtering mechanism and no conversation state is kept on the web server (aka stateless web server). 
 
    This implies that it's not a general web framework, i.e., there is no templating mechanism. It's better use with a JavaScript framework on the client side, and you can always use any other templating mechanism to serve your pages.
 
@@ -56,7 +56,7 @@ If you'd prefer a truly async-oriented framework, have a look at [vert.x](http:/
 
 ## admin web console
 
-   monitoring, DI container exploration, API documentation, recording console, ...
+   monitoring, Dependency Injection container exploration, API documentation, recording console, log admin, ...
 
 ## enterprise friendly
 
@@ -74,14 +74,19 @@ If you'd prefer a truly async-oriented framework, have a look at [vert.x](http:/
 
    because we can't live without them
 
-## cloud friendly (soon)
+## cloud friendly
 
    ready to deploy on many cloud offerings (Cloudbees, heroku, ...)
 
 ## easy to setup
 
-   a command line helps to create new apps, run and deploy them on the cloud
+   a command line helps to create new apps, compile and run them on the cloud
 	 
+## developer friendly
+
+   auto compile mode gives very fast feedback cycles, almost like with an interpreted language. Being pure Java you also have very good IDE support. And a special care has been given to developer experience, with good error management (try to send a badly formatted json when you use a POST or PUT get an idea). Moreover, the use of annotation processor allows to raise errors at compile time, if you mistype a Path parameter for instance.
+
+
 <div class="go-next">
 <ul>
 	<li><a href="install.html"><i class="icon-cloud-download"> </i> Install</a></li>

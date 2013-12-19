@@ -15,6 +15,7 @@ As soon as you have chosen to generate a sample resource when [generating your R
 ## Launch the app
 
 Locate the `<your.main.package>.AppServer` class in the src/main/java directory, and run it from your IDE as a regular Java application.
+Alternatively, you can use the shell to run the app with `restx app run`.
 
 You should see something like this in your IDE console:
 {% highlight console %}
@@ -36,7 +37,7 @@ LoginService=HashLoginService[null] identityService=org.eclipse.jetty.security.D
 ### Admin Console
 As the console invite you to do, open [http://localhost:8080/api/@/ui/](http://localhost:8080/api/@/ui/) in your browser.
 
-It will first prompt for a user and password. The default user to use is `admin`, and you should have provided the password during app scaffolding. If you don't override the default password in your app, the default one is `juma`. Chef the [security doc](/docs/ref-security.html) for details on restx security feature.
+It will first prompt for a user and password. The default user to use is `admin`, and you should have provided the password during app scaffolding. If you don't override the default password in your app, the default one is `juma`. Check the [security doc](/docs/ref-security.html) for details on restx security feature.
 
 Once logged in, you should see the RESTX admin console home:
 
@@ -66,6 +67,12 @@ Now you can try it out, use the `Try it out` button at the top of the page, and 
 ![Try hello resource in RESTX API DOCS](/images/docs/admin-apidocs-hello-try.png)
 
 For Linux/MacOS users you can also try it out from the command line using [curl](http://curl.haxx.se/) or [httpie](https://github.com/jkbr/httpie). You need to first authenticate and then use the API.
+
+<div class="note">
+	<p>RESTX by default uses md5 hashed password to avoid sending passwords in clear text.</p>
+	<p>This doesn't mean you don't need to secure your connection in production with HTTPS, and encrypt/hash passwords with salt when storing them in database. RESTX has very good support for that by the way.</p>
+        <p>To compute the md5 of your password RESTX shell provides a convenient `restx hash md5 [whatever]` command.</p>
+</div>
 
 With curl:
 {% highlight console %}
@@ -112,6 +119,11 @@ Server: Jetty(8.1.8.v20121106)
 
 Since this is a GET request, you can also simply open the URL in your browser (in a browser where you are already authenticated): [http://localhost:8080/api/message?who=restx](http://localhost:8080/api/message?who=restx)
 
+<div class="note">
+	<p>RESTX also supports HTTP Basic authentication, as soon as you provide the password md5 and not the password itself you should be able to use it conveniently with `curl` or `httpie`</p>
+</div>
+
+
 ### Monitoring
 
 Now go to the [monitoring page](http://localhost:8080/api/@/ui/monitor/) in the console, you will get a page listing a set of elements which are monitored:
@@ -119,7 +131,7 @@ Now go to the [monitoring page](http://localhost:8080/api/@/ui/monitor/) in the 
 ![RESTX admin monitor home](/images/docs/admin-monitor.png)
 
 You have mainly 2 categories of elements monitored by default: 
-- `<BUILD>` corresponds to instanciation of the components of your application. Most compoenents being instantiated at startup time, this is useful to track which components is responsible for slowing down your app startup time. The time you see in the `last` `min` and `max` columns are in ms, and corresponds to the component instanciation, **without** taking into account its dependencies instanciation (so that it's easier to track down components actually taking time to instanciate).
+- `<BUILD>` corresponds to instanciation of the components of your application. Most components being instantiated at startup time, this is useful to track which components is responsible for slowing down your app startup time. The time you see in the `last` `min` and `max` columns are in ms, and corresponds to the component instanciation, **without** taking into account its dependencies instanciation (so that it's easier to track down components actually taking time to instanciate).
 - `<HTTP>` corresponds to HTTP requests handled by RESTX. The time indicated in the `last` `min` and `max` columns are in ms, and corresponds to the time spent to handle the request **in RESTX**. This does not take into accound HTTP container time (servlet container or other container).
 
 Using the search box in the upper left you can easily filter lines based on the content of their `Label` column, so if you want only `<HTTP>` elements you just need to type `HTTP`.

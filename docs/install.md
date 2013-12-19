@@ -52,7 +52,7 @@ if you prefer to stay in control of your installation, here are the installation
 Here is an example of script to do that:
 {% highlight console %}
 mkdir ~/.restx
-curl --progress-bar --fail "http://repo1.maven.org/maven2/io/restx/restx-package/0.2.4/restx-package-0.2.4.tar.gz" | tar -xzf - -C ~/.restx
+curl --progress-bar --fail "http://repo1.maven.org/maven2/io/restx/restx-package/{{ site.restx-version }}/restx-package-{{ site.restx-version }}.tar.gz" | tar -xzf - -C ~/.restx
 ln -s ~/.restx/restx /usr/local/bin/restx
 {% endhighlight %}
 
