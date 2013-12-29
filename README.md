@@ -1,6 +1,6 @@
-restx
-=====
+restx.io
+=======
 
-This is the home of the RESTX project, the lightweight Java REST framework.
+This repository is used for RESTX web site that you can reach at http://restx/io
 
-Check the web site at http://restx.io for more details.
+RESTX main repository is at http://github.com/restx/restx
