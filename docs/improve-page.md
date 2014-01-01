@@ -45,7 +45,7 @@ You can also edit the page using github interface. You will need to fork the rep
 (function() {
 	var filename = window.location.hash.substring(1);
 	document.getElementById('page-path').innerHTML=filename;
-	document.getElementById('edit-github').setAttribute('href', 'https://github.com/restx/restx/blob/gh-pages/docs/' + filename);
-	document.getElementById('edit-prose').setAttribute('href', 'http://prose.io/#restx/restx/edit/gh-pages/docs/' + filename);
+	document.getElementById('edit-github').setAttribute('href', 'https://github.com/restx/restx.github.io/blob/master/docs/' + filename);
+	document.getElementById('edit-prose').setAttribute('href', 'http://prose.io/#restx/restx.github.io/edit/master/docs/' + filename);
 })();
 </script>
