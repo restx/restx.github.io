@@ -66,6 +66,19 @@ This sample goes further than `restx-samples-hellomongo` to demonstrate restx wi
 
 [https://github.com/xhanin/rxinvoice](https://github.com/xhanin/rxinvoice)
 
+## restx-samplest
+
+This is a module of RESTX used both to demonstrate features and used as automatic tests for these features.
+Therefore it contains a bunch of features demonstration, and not a full app sample.
+
+### Features demonstrated
+
+- many!
+
+### Repo
+
+[https://github.com/restx/restx/tree/master/restx-samplest](https://github.com/restx/restx/tree/master/restx-samplest)
+
 
 ## restx-samples-beersample
 
