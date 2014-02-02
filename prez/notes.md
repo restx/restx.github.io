@@ -102,13 +102,13 @@ Use 'x' as password for easy access.
 ### access
 
 {% highlight console %}
-http --session=u1 POST "http://demo.restx.io/api/sessions" principal:='{"name":"admin", "passwordHash":"9dd4e461268c8034f5c8564e155c67a6"}'
-http --session=u1 GET "http://localhost:8080/api/message?who=bordeaux"
+http --session=u1 POST "http://demo.restx.io:8080/api/sessions" principal:='{"name":"admin", "passwordHash":"9dd4e461268c8034f5c8564e155c67a6"}'
+http --session=u1 GET "http://demo.restx.io:8080/api/message?who=bordeaux"
 {% endhighlight %}
 
 show HelloResource
 explain
-change message in hello resource with vim.
+change message in hello resource with RESTX console.
 show result with autocompile
 
 ### api docs
@@ -121,7 +121,7 @@ show what happens with su user1 / user2
 
 ### mount fs
 {% highlight console %}
-cd ~/projects && mkdir demo1 && sshfs demo.restx.io: demo1 && cd demo1/demo1
+cd ~/projects && mkdir demo1 && sshfs demo.restx.io: demo1 -o IdentityFile=~/.ssh/google_compute_engine && cd demo1/demo1
 {% endhighlight %}
 
 ### open in idea
