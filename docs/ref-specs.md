@@ -17,7 +17,7 @@ wts:
       {"message":"hello xavier, it's 14:33:18"}
 {% endhighlight %}
 [View source in a sample project](https://github.com/restx/restx-samples-hello/blob/master/src/test/resources/specs/hello/should_say_hello.spec.yaml)
-
+[More examples](https://github.com/xhanin/rxinvoice/tree/master/src/main/resources/specs)
 
 This file specifies your REST API by telling what it should respond (the `then`) to a specific request (the `when`) given a current state of the system (the `given`).
 
