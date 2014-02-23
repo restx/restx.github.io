@@ -3,11 +3,13 @@ filename: samples.md
 layout: docs
 title:  "Samples"
 ---
-# RESTX Samples
+# RESTX Samples and projects
 
 Some samples are provided to demonstrate some of RESTX features.
 
 Each sample is hosted in a separate github repo, so you can easily clone it or download its content.
+
+We also list here open source projects using RESTX as they can be a good source of inspiration too.
 
 <div class="note">
 	<p>All samples can be imported in your IDE as described in <a href="ide.html">IDE support</a> documentation.</p>
@@ -99,6 +101,8 @@ This sample is based on the code developed during [CodeStory](http://code-story.
 
 This sample demonstrates not only a REST API but also the client with a nice UI.
 
+_Note that this sample is not actively maintained_
+
 ### Features demonstrated
 
 - mongoDB integration with Jongo
@@ -111,6 +115,17 @@ This sample demonstrates not only a REST API but also the client with a nice UI.
 ### Repo
 
 [https://github.com/restx/restx-samples-geektic](https://github.com/restx/restx-samples-geektic)
+
+## Qzui (Project)
+
+Qzui is an open source project based on RESTX and Quartz scheduler.
+
+It's very basic, it's merely exposing a limited REST API and simple UI over Quartz Scheduler.
+
+### Repo
+
+[https://github.com/xhanin/qzui](https://github.com/xhanin/qzui)
+
 
 
 
