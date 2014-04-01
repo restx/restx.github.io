@@ -126,7 +126,21 @@ GET message?who=xavier (src/test/resources/cases/hello/should_say_hello.spec.yam
 
 ## Recording
 
-Because spec are so useful, RESTX makes it super easy to add specs to your RESTX project with a recording feature (Implementation sources: [1](https://github.com/restx/restx/blob/master/restx-core/src/main/java/restx/specs/RestxSpecRecorder.java) [2](https://github.com/restx/restx/blob/master/restx-core/src/main/java/restx/specs/RestxSpecTape.java)). You start your RESTX server in recording mode, and use admin console to browse the recorded HTTP requests, and save them directly as spec files.
+Because spec are so useful, RESTX makes it super easy to add specs to your RESTX project with a recording feature (Implementation sources: [1](https://github.com/restx/restx/blob/master/restx-core/src/main/java/restx/specs/RestxSpecRecorder.java) [2](https://github.com/restx/restx/blob/master/restx-core/src/main/java/restx/specs/RestxSpecTape.java)). 
+
+There are 2 ways to record requests: either you start your RESTX server in RECORDING mode, or you can record one request at a time when using the DEV mode.
+
+### Recording single requests
+
+In the API docs, when you use "try it out" to be able to test your API, you not only have a "Send" button to send your request, you also have "Send & Record" and "Send & Fix":
+
+![api docs record](/images/docs/admin-apidocs-hello-record.png)
+
+Using the "Send & record" button will send the request and records the corresponding spec. This is very useful to add examples to your API docs, and at the same time add non regression tests. But sometime you discover a bug while playing with your API in apidocs, and could like to record the request causing the problem with an expected result which is not the one you currently get. This is what "Send & Fix" is for: it will send the request, record the request and response but don't save it as a spec yet, but rather send it back to apidocs so that you can edit the expected response, and then save the request + expected response as a new spec.
+
+### Recording mode
+
+You start your RESTX server in recording mode, and use admin console to browse the recorded HTTP requests, and save them directly as spec files. This is useful if you want to record a bunch of requests, for instance while using your regular API client (your web app UI if you use your REST API inside your own web app).
 
 To start the server in recording mode, you just need to use `-Drestx.mode=recording` as JVM option when launching your `AppServer` class, then you should see something like when starting the server:
 
@@ -141,6 +155,8 @@ To start the server in recording mode, you just need to use `-Drestx.mode=record
  --
  {% endhighlight %}
 
+You can also do that with the shell with `restx app run --mode=recording`.
+
 Then use your server as usual by calling it REST API issuing HTTP requests.
 
 Then open the admin web console and go to the `recorder` page (sg like http://localhost:8086/api/@/ui/recorder/ ):
@@ -154,6 +170,28 @@ As you see from the screenshot Cookies are recorded too, so authenticated reques
 <div class="note">
 	<p><strong>WARNING:</strong> when used in recording mode RESTX requests are significantly slower than usual, and don't run concurrently. <strong>DO NOT USE in production!</strong></p>
 </div>
+
+### What is recorded
+
+RESTX tries to record not only the request and the response, but also the external parts of the system so that the spec is replayable as is.
+
+Currently, RESTX supports recording / replaying:
+
+- the request
+- the response
+- the current time (using a custom thread safe version of [JodaTime setCurrentMillisFixed](http://joda-time.sourceforge.net/apidocs/org/joda/time/DateTimeUtils.html#setCurrentMillisFixed(long)))
+- the RESTX session
+- request cookies
+- UUIDs generated with [UUIDGenerator](https://github.com/restx/restx/blob/master/restx-common/src/main/java/restx/common/UUIDGenerator.java)
+
+Plus, if you use the jongo module:
+- the state of Mongo collections used during the requests
+- the Mongo OIDs generated during the request
+
+Therefore you can very easily record and replay non regression integration tests which run lightning fast!
+
+Moreover, the recording / replay facility is pluggable, so you can write your own recorder / spec loader / player and customize it to your own needs (ask for help on the google group).
+
 
 <div class="go-next">
 	<ul>
