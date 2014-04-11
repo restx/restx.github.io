@@ -29,7 +29,7 @@ Installation can be done in 3 simple steps:
 ### Super easy / Single command way
 For the lucky Linux / MacOS users, you can just run this command in your terminal:
 {% highlight console %}
-$ curl -s http://restx.io/install.sh | sh
+$ curl -Ls http://restx.io/install.sh | sh
 {% endhighlight %}
 
 [View source](https://github.com/restx/restx/blob/gh-pages/install.sh)
