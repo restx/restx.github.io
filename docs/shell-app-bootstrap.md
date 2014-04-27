@@ -55,9 +55,9 @@ Options:
 If you don't know these tools, use default answer.
 
 generate module descriptor (ivy/pom/none/all) [all]?
-restx version [0.2.5-SNAPSHOT]? ??
+restx version [{{ site.restx-version }}]? ??
 No help provided for that question, sorry, try to figure it out or ask to the community...
-restx version [0.2.5-SNAPSHOT]?
+restx version [{{ site.restx-version }}]?
 signature key (to sign cookies) [ca8aee0f-0981-4785-a4c6-da5241ba148e -8559572878909826860 myapp MyApp]? ??
 This is used as salt for signing stuff exchanged with the client.
 Use something fancy or keep what is proposed by default, but make sure to not share that publicly.
@@ -102,6 +102,6 @@ Congratulations! - Your app is now ready in /Users/xavierhanin/projects/myapp
 		<li><a href="getting-started.html"><i class="icon-play"> </i> Getting started</a></li>
 		<li><a href="/community/"><i class="icon-beer"> </i> Community</a></li>
 		<li><a href="/docs/"><i class="icon-book"> </i> Documentation</a></li>
-	</ul>	
+	</ul>
 </div>
 
