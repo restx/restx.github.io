@@ -52,10 +52,10 @@ trap "echo Installation failed." EXIT
 
 if [ "${1:-unset}" = "unset" ] ; then
 	# get current version from web site
-	VERSION=`curl -s http://restx.io/version | head -n 1`
+	VERSION=`curl -Ls http://restx.io/version | head -n 1`
 
 	# get current tarball URL from web site
-	TARBALL_URL=`curl -s http://restx.io/version | tail -n 1`
+	TARBALL_URL=`curl -Ls http://restx.io/version | tail -n 1`
 
 	# the url has no extension on web site, because it's used for updates where choosing between zip and tar.gz 
 	# depends on platform
