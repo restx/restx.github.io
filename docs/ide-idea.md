@@ -10,7 +10,9 @@ layout: docs
 	<p>If you don't want to use any of these, follow the instructions for Ivy, they include more manual steps.</p>
 </div>
 
-<a class="tab-head" href="#ivy"><h2>Ivy</h2></a>
+<div class="tab-head">
+<a href="#ivy"><h2>Ivy</h2></a>
+</div>
 
 By default restx shell generates an Ivy file for your project, here are the instructions to setup your IDE with the corresponding project.
 
@@ -61,7 +63,7 @@ You're now ready to setup the source paths for your project. Open the project se
 
 ![setup source paths for a RESTX project in IDEA](/images/docs/idea-sources-paths-1.png)
 
-Then you can launch a build with `Build -> Make Project`. You should see the generated sources in the directory you selected in annotation processors settings. 
+Then you can launch a build with `Build -> Make Project`. You should see the generated sources in the directory you selected in annotation processors settings.
 
 Your IDE is ready, still we recommend to add the sources generation targets as source roots so that you can easily browse them:
 
@@ -78,10 +80,12 @@ If this is your first time with RESTX and followed this doc with the generated a
 		<li><a href="getting-started.html"><i class="icon-play"> </i> Getting started</a></li>
 		<li><a href="/community/"><i class="icon-beer"> </i> Community</a></li>
 		<li><a href="/docs/"><i class="icon-book"> </i> Documentation</a></li>
-	</ul>	
+	</ul>
 </div>
 
-<a class="tab-head" href="#maven"><h2>Maven</h2></a>
+<div class="tab-head">
+<a href="#maven"><h2>Maven</h2></a>
+</div>
 
 If you have chosen to use Maven and [have generated a pom](getting-started.html) for the project (or hand written one following the [provided instructions](manual-app-bootstrap.html)), then you can use IDEA built in Maven support to import the project.
 
@@ -105,7 +109,7 @@ Use **File -> Import Project** and selects the pom.xml of the project. Then impo
 You may need to double check the annotation processor settings to make sure it is enabled, use annotation processors from classpath, and preferably generate the sources in a folder relative to the module content root (so that you can easily see the generated sources):
 
 ![annotation processor settings in IDEA](/images/docs/idea-annotation-processor-preferences.png)
- 
+
 If this is your first time with RESTX and followed this doc with the generated app, you probably want to [try it out now!](try-generated-app.html)
 
 <div class="go-next">
@@ -115,5 +119,5 @@ If this is your first time with RESTX and followed this doc with the generated a
 		<li><a href="getting-started.html"><i class="icon-play"> </i> Getting started</a></li>
 		<li><a href="/community/"><i class="icon-beer"> </i> Community</a></li>
 		<li><a href="/docs/"><i class="icon-book"> </i> Documentation</a></li>
-	</ul>	
+	</ul>
 </div>

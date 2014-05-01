@@ -10,7 +10,7 @@ layout: docs
 	<p>Ivybeans plugin for netbeans is no more maintained.</p>
 </div>
 
-<a class="tab-head" href="#maven"><h2>Maven</h2></a>
+## Maven
 
 To setup your RESTX project inside Netbeans with Maven support you will need to:
 
@@ -25,8 +25,6 @@ By the way, a "build" action generate all the sources :
 
 ![RestX hello world open in Netbeans](/images/docs/netbeans-helloWorld.png)
 
-Watch the [corresponding issue](https://github.com/restx/restx/issues/3) to show your interest.
-
 <div class="go-next">
 	<ul>
 		<li><a href="ide.html"><i class="icon-cog"> </i> Setup your IDE</a></li>
@@ -35,5 +33,5 @@ Watch the [corresponding issue](https://github.com/restx/restx/issues/3) to show
 		<li><a href="getting-started.html"><i class="icon-play"> </i> Getting started</a></li>
 		<li><a href="/community/"><i class="icon-beer"> </i> Community</a></li>
 		<li><a href="/docs/"><i class="icon-book"> </i> Documentation</a></li>
-	</ul>	
+	</ul>
 </div>

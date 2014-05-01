@@ -18,25 +18,47 @@ Welcome to RESTX documentation!
 </div>
 
 Here is the full table of contents of the documentation:
+
 ## [Features](features.html)
+
 ## [Install](install.html)
+
 ## [Getting Started](getting-started.html)
+
 ### [Shell App Bootstrap](shell-app-bootstrap.html)
+
 ### [Manual App Bootstrap](manual-app-bootstrap.html)
+
 ## [IDE support](ide.html)
-### [IntellIJ IDEA](ide-idea.html) 
+
+### [IntellIJ IDEA](ide-idea.html)
+
 ### [Eclipse](ide-eclipse.html)
+
 ### [Netbeans](ide-netbeans.html)
+
 ## [Try generated App](try-generated-app.html)
+
 ## [Generated App Explained](generated-app-explained.html)
+
 ## [External docs](external-docs.html)
+
 ## [Samples](samples.html)
+
 ## Reference
+
 ### [RESTX Factory](ref-factory.html)
+
 ### [RESTX HTTP](ref-core.html)
+
 ### [RESTX Lifecycle](ref-lifecycle.html)
+
 ### [RESTX Specs](ref-specs.html)
+
 ### [RESTX Settings](ref-settings.html)
+
 ### [RESTX Security](ref-security.html)
+
 ### [RESTX Errors Management](ref-errors-management.html)
+
 ### [Deploying a RESTX app](ref-deploy.html)

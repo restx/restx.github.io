@@ -1,5 +1,6 @@
 name: RESTX, the lightweight Java REST framework
 pygments: true
+markdown: kramdown
 pullrequesturl: /docs/improve-page.html#
 restx-version: "0.32"
 restx-package-version: "0.32"

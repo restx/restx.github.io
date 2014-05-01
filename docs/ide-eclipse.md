@@ -10,7 +10,9 @@ layout: docs
 	<p>If you don't want to use any of these, follow the instructions for Ivy, they include more manual steps.</p>
 </div>
 
-<a class="tab-head" href="#ivy"><h2>Ivy</h2></a>
+<div class="tab-head">
+<a href="#ivy"><h2>Ivy</h2></a>
+</div>
 
 To setup your RESTX project inside Eclipse with Ivy support you will need to:
 
@@ -72,10 +74,12 @@ If this is your first time with RESTX and followed this doc with the generated a
 		<li><a href="getting-started.html"><i class="icon-play"> </i> Getting started</a></li>
 		<li><a href="/community/"><i class="icon-beer"> </i> Community</a></li>
 		<li><a href="/docs/"><i class="icon-book"> </i> Documentation</a></li>
-	</ul>	
+	</ul>
 </div>
 
-<a class="tab-head" href="#maven"><h2>Maven</h2></a>
+<div class="tab-head">
+<a href="#maven"><h2>Maven</h2></a>
+</div>
 
 If you have chosen to use Maven and [have generated a pom](getting-started.html) for the project (or hand written one following the [provided instructions](manual-app-bootstrap.html)), then you can use Eclipse Maven support (through the m2e plugin) to import the project.
 
@@ -105,5 +109,5 @@ If this is your first time with RESTX and followed this doc with the generated a
 		<li><a href="getting-started.html"><i class="icon-play"> </i> Getting started</a></li>
 		<li><a href="/community/"><i class="icon-beer"> </i> Community</a></li>
 		<li><a href="/docs/"><i class="icon-book"> </i> Documentation</a></li>
-	</ul>	
+	</ul>
 </div>
