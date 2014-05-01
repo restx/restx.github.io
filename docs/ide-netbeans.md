@@ -5,7 +5,25 @@ layout: docs
 ---
 # Setting up a restx project in Netbeans
 
-Instructions are not available yet, feel free to submit a pull request for these instructions.
+<div class="note">
+	<p>Instructions are provided here for only supported build tools Maven.</p>
+	<p>Ivybeans plugin for netbeans is no more maintained.</p>
+</div>
+
+<a class="tab-head" href="#maven"><h2>Maven</h2></a>
+
+To setup your RESTX project inside Netbeans with Maven support you will need to:
+
+- create and configure the project for maven (choose pom in "generate module descriptor")
+- open in Netbeans as a maven project.
+- run the app using AppServer main class.
+
+### Enable and configure annotation processing
+
+  It seems that on netbeans 8.0 it is not possible to configure "compile on save" with the java 8 annotation processor.
+By the way, a "build" action generate all the sources :
+
+![RestX hello world open in Netbeans](/images/docs/netbeans-helloWorld.png)
 
 Watch the [corresponding issue](https://github.com/restx/restx/issues/3) to show your interest.
 
