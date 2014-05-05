@@ -32,7 +32,7 @@ For the lucky Linux / MacOS users, you can just run this command in your termina
 $ curl -Ls http://restx.io/install.sh | sh
 {% endhighlight %}
 
-[View source](https://github.com/restx/restx/blob/gh-pages/install.sh)
+[View source](https://github.com/restx/restx.github.io/blob/master/install.sh)
 
 Then you should be able to run `restx`:
 {% highlight console %}
