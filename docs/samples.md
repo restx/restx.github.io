@@ -101,6 +101,20 @@ Sample used for [Xavier](https://github.com/xhanin)'s talk at Devoxx France 2014
 
 [https://github.com/xhanin/iwasthere](https://github.com/xhanin/iwasthere)
 
+## restx-singlejar
+
+This is a variant of `restx-samples-hello`, but packaged as a single uber jar.
+
+### Features demonstrated
+
+- uberjar packaging
+- simpleframework integration
+
+### Repo
+
+[https://github.com/xhanin/restx-singlejar](https://github.com/xhanin/restx-singlejar)
+
+
 # Projects
 
 List of open source projects using RESTX, which can be a good source of inspiration.
