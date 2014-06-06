@@ -319,6 +319,12 @@ This file is used at build time only, its the source used by RESTX to:
 - download dependencies (with `restx deps install` or for `restx app run`)
 - manage app dependencies (with `restx deps install` command)
 
+<div class="note">
+	<p>The module descriptor isn't used at runtime, you can get rid of it if you prefer to manage building, running and deploying your app on your own.</p>
+</div>
+
+The file format is pretty straightforward to understand if you are familiar with Maven, Ivy or similar build / dependency management tools.
+
 ## logback.xml
 
 This file is used to configure logging. This is maybe one of the more complex generated files, depending on your experience with logback configuration.
@@ -415,12 +421,6 @@ Feel free to adjust it to your own needs, but if you are not confortable with lo
 </configuration>
 {% endhighlight %}
 
-
-<div class="note">
-	<p>It isn't used at runtime, you can get rid of it if you prefer to manage building, running and deploying your app on your own.</p>
-</div>
-
-The file format is pretty straightforward to understand if you are familiar with Maven, Ivy or similar build / dependency management tools.
 
 <div class="go-next">
 	<ul>
