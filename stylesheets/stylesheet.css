@@ -660,7 +660,6 @@ article.docs {
 
 #menu {
   position: absolute;
-  width: 810px;
   z-index: 10;
   bottom: -40px;
   right: 0;
