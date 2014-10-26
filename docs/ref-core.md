@@ -123,7 +123,7 @@ public class FactoryDumpRoute extends StdRoute {
     private final Factory factory;
     @Inject
     public FactoryDumpRoute(Factory factory) {
-        super("FactoryRoute", new StdRouteMatcher("GET", "/@/factory"));
+        super("FactoryRoute", new StdRestxRequestMatcher("GET", "/@/factory"));
         this.factory = factory;
     }
     @Override
