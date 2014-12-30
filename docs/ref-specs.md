@@ -26,11 +26,11 @@ What's interesting is that single file can be used for multiple purposes:
 
 ### Testing
 
-RESTX provides a JUnit Rule which helps to execute a spec as an integration test:
+RESTX provides a JUnit Rule which helps to execute specs as an integration tests:
 
 - it starts up an embedded RESTX server for you
-- it prepares the state of the system according to the `given` section of your file
-- it issues the specified request, and verifies the expected response
+- it prepares the state of the system according to the `given` section of your spec files
+- it issues the specified requests, and verifies the expected responses
 
 Here is an example of how to use this feature:
 
