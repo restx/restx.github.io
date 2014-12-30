@@ -35,15 +35,9 @@ RESTX provides a JUnit Rule which helps to execute a spec as an integration test
 Here is an example of how to use this feature:
 
 {% highlight java %}
+@RunWith(RestxSpecTestsRunner.class)
+@FindSpecsIn("specs/hello")
 public class HelloResourceSpecTest {
-    @ClassRule
-    public static RestxSpecRule rule = new RestxSpecRule(
-            AppServer.WEB_INF_LOCATION,
-            AppServer.WEB_APP_LOCATION);
-    @Test
-    public void should_say_hello() throws Exception {
-        rule.runTest("specs/hello/should_say_hello.spec.yaml");
-    }
 }
 {% endhighlight %}
 [View source in sample project](https://github.com/restx/restx-samples-hello/blob/master/src/test/java/hello/rest/HelloResourceSpecTest.java)
