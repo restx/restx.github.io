@@ -61,4 +61,6 @@ Here is the full table of contents of the documentation:
 
 ### [RESTX Errors Management](ref-errors-management.html)
 
+### [RESTX i18n](ref-i18n.html)
+
 ### [Deploying a RESTX app](ref-deploy.html)
