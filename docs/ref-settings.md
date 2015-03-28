@@ -76,8 +76,8 @@ public class MyModule {
 
 This will try to load settings from to classpath resources:
 
-- myapp.myConfig.[env].properties
-- myapp.myConfig.properties
+- myapp/myConfig.[env].properties
+- myapp/myConfig.properties
 
 where [env] is the value of a string named 'env' (which can be set using system property).
 
