@@ -185,22 +185,6 @@ A simple blog engine.
 [https://github.com/Zenika/zBlog](https://github.com/Zenika/zBlog)
 
 
-## Jarvis
-
-A simple dashboard for Jenkins jobs.
-
-### Features demonstrated
-
-- Use RESTX to expose another REST API
-- AngularJs UI
-- Vagrant to launch Jenkins
-
-### Repo
-
-[https://github.com/ZenikaOuest/jarvis](https://github.com/ZenikaOuest/jarvis)
-
-
-
 ## Remind It
 
 Bookmark URLs and search over their content.
