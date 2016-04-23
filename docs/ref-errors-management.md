@@ -43,13 +43,32 @@ Here we have defined 2 business errors:
 
 The codes provided in the annotations must be unique, and is used for easy referencing the business error.
 
+## Injection
+
+You need to inject a RestxErrors component into your component constructor (see for <a href="ref-factory.html">injections</a> if necessary) :
+
+{% highlight java %}
+@Component @RestxResource
+public class UserResource {
+    private final AppUserRepository appUserRepository;
+    private final RestxErrors errors;
+    private final CompanyResource companyResource;
+
+    public UserResource(AppUserRepository appUserRepository, RestxErrors errors,
+                        CompanyResource companyResource) {
+        this.appUserRepository = appUserRepository;
+        this.errors = errors;
+        this.companyResource = companyResource;
+    }
+{% endhighlight %}
+
 ## Raising errors
 
 RESTX doesn't provide facility for checking the rule, so you have to do the check on your own. But then if your check fails you can raise the error like this:
 
 {% highlight java %}
 if (!companyResource.findCompanyByKey(user.getCompanyRef()).isPresent()) {
-     throw RestxError.on(User.Rules.ValidCompanyRef.class)
+     throw errors.on(User.Rules.ValidCompanyRef.class)
              .set(User.Rules.ValidCompanyRef.KEY, user.getKey())
              .set(User.Rules.ValidCompanyRef.COMPANY_REF, user.getCompanyRef())
              .raise();
@@ -58,7 +77,7 @@ if (!companyResource.findCompanyByKey(user.getCompanyRef()).isPresent()) {
 
 The API is fluent, and type safe, with pretty good code completion to provide the parameters.
 
-## Consuming errors 
+## Consuming errors
 
 On the client side, errors are provided as:
 
@@ -97,8 +116,5 @@ As you can see the console provides the list of business errors, with:
 		<li><a href="ref-factory.html"><i class="icon-cogs"> </i> RESTX Factory reference</a></li>
 		<li><a href="/community/"><i class="icon-beer"> </i> Community</a></li>
 		<li><a href="/docs/"><i class="icon-book"> </i> Documentation</a></li>
-	</ul>	
+	</ul>
 </div>
-
-
- 
