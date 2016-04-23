@@ -45,7 +45,7 @@ The codes provided in the annotations must be unique, and is used for easy refer
 
 ## Injection
 
-You need to inject a RestxErrors component into your component constructor (see for <a href="ref-factory.html">injections</a> if necessary) :
+You need to inject a RestxErrors component into your component constructor (see for <a href="ref-factory.html#toc7">injections</a> if necessary) :
 
 {% highlight java %}
 @Component @RestxResource
