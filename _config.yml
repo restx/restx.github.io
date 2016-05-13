@@ -2,5 +2,5 @@ name: RESTX, the lightweight Java REST framework
 highlighter: pygments
 markdown: kramdown
 pullrequesturl: /docs/improve-page.html#
-restx-version: "0.34"
-restx-package-version: "0.34"
+restx-version: "0.34.1"
+restx-package-version: "0.34.1"
