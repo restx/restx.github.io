@@ -47,7 +47,7 @@ Note that all settings are also made available as Named strings in the factory, 
 {% highlight java %}
 @Component
 public class MyComponent {
-    public MyComponent(@Named("example.key1") key1) {
+    public MyComponent(@Named("example.key1") String key1) {
     }
 }
 {% endhighlight %}
@@ -68,6 +68,8 @@ You can easily load settings values from a properties file. Restx provide a Conf
 {% highlight java %}
 @Module
 public class MyModule {
+
+  @Provides
   public ConfigSupplier myConfigSupplier(ConfigLoader configLoader) {
         return configLoader.fromResource("myapp/myConfig");
     }
