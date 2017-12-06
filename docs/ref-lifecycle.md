@@ -29,9 +29,9 @@ To support thism and also to favor true statelessness, in `dev` mode RESTX uses 
 
 Going even further, when using auto compile RESTX will automatically compile your sources when they change, and in such case drop the whole classloader with all your application classes in favor of a new one with your new classes. That's what allow you to change anything in your sources and still benefit from hot reload. Throwing away the whole classloader means that even static fields are reset on source changes.
 
-### AutoClosable
+### AutoCloseable
 
-Having components dropped away on each request implies that your components must be disposable without leaking resources. If you need to clean up something when disposed, your components must implement the `AutoClosable` interface, and the close method defined in that method will be called when closing the Factory which has built the component.
+Having components dropped away on each request implies that your components must be disposable without leaking resources. If you need to clean up something when disposed, your components must implement the `AutoCloseable` interface, and the close method defined in that method will be called when closing the Factory which has built the component.
 
 ### AutoStartable
 
