@@ -53,6 +53,24 @@ In the example above it only sets the time. This is achieved using Joda Time API
 
 But the entries you can put in your given section is pluggable, so for instance the [restx-jongo-specs-tests](https://github.com/restx/restx/tree/master/restx-jongo-specs-tests) provides a `given` item to import data in a MongoDB collection.
 
+### Testing with MongoDB
+
+In case your application server relies on MongoDB for data persistence, the `restx-jongo-specs-tests` module provides convenient JUnit integration. Just import it as a dependency in your project:
+
+{% highlight xml %}
+<dependency>
+    <groupId>io.restx</groupId>
+    <artifactId>restx-jongo-specs-tests</artifactId>
+    <version>${restx.version}</version>
+    <scope>test</scope>
+</dependency>
+{% endhighlight %}
+
+Then you can declare `restx.jongo.specs.tests.MongoRestxSpecTestsListener` as a listener in
+[surefire](https://maven.apache.org/surefire/maven-surefire-plugin/examples/junit.html#Using_Custom_Listeners_and_Reporters),
+[failsafe](https://maven.apache.org/surefire/maven-failsafe-plugin/examples/junit.html#Using_Custom_Listeners_and_Reporters)
+or in your favorite plugin. It will handle the start and stoppage of an embedded MongoDB database when running your test suite.
+
 ### Examples in API Docs
 
 RESTX provides [a module to add API Docs](https://github.com/restx/restx/tree/master/restx-apidocs) entry to the RESTX admin web console. This docs is inspired by [Swagger UI](https://developers.helloreverb.com/swagger/) and is very helpful if you want to publish your API for other developers to use them, or simply for front-end developers (it not only documents but also allow to try the REST API very easily).
