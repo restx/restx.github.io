@@ -64,7 +64,7 @@ else
 	VERSION=$1
 	
 	if [ "${2:-unset}" = "unset" ] ; then	
-			TARBALL_URL="http://repo1.maven.org/maven2/io/restx/restx-package/${VERSION}/restx-package-${VERSION}.tar.gz"
+			TARBALL_URL="https://repo1.maven.org/maven2/io/restx/restx-package/${VERSION}/restx-package-${VERSION}.tar.gz"
   else
 			TARBALL_URL=$2
 	fi
