@@ -3,4 +3,4 @@ highlighter: pygments
 markdown: kramdown
 pullrequesturl: /docs/improve-page.html#
 restx-version: "1.0.0"
-restx-package-version: "1.0.0"
+restx-package-version: "1.0"
